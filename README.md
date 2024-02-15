@@ -3,15 +3,15 @@
 The use of CIF-Rank requires [R]([https://pages.github.com/](https://cran.r-project.org/bin/linux/ubuntu/fullREADME.html#installing-r)) to be installed.
 
 ## Example Use
-> git clone https://github.com/ClaraRus/FairInterventionsPackage.git
-> 
-> conda create -n fair_interventions python=3.8
-> 
-> conda activate fair_interventions
-> 
-> cd FairInterventions
-> 
-> pip install .
+``` git clone https://github.com/ClaraRus/FairInterventionsPackage.git
+
+conda create -n fair_interventions python=3.8
+
+conda activate fair_interventions
+
+cd FairInterventions
+
+pip install . ```
 ## References
 [1]
 Rus, Clara, Maarten de Rijke, and Andrew Yates. "A Study of Pre-processing Fairness Intervention
