@@ -1,15 +1,15 @@
 # A Study of Pre-processing Fairness Intervention Methods for Ranking People
 ## Requirements
-The use of CIF-Rank requires [R]([https://pages.github.com/](https://cran.r-project.org/bin/linux/ubuntu/fullREADME.html#installing-r) to be installed.
+The use of CIF-Rank requires [R]([https://pages.github.com/](https://cran.r-project.org/bin/linux/ubuntu/fullREADME.html#installing-r)) to be installed.
 
 ## Example Use
-> git clone 
+> git clone https://github.com/ClaraRus/FairInterventionsPackage.git
 > 
-> conda create -n fair_intervention python=3.8
+> conda create -n fair_interventions python=3.8
 > 
-> conda activate fair_intervention
+> conda activate fair_interventions
 > 
-> cd
+> cd FairInterventions
 > 
 > pip install .
 ## References
