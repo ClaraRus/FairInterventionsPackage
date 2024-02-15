@@ -1,4 +1,4 @@
-# A Study of Pre-processing Fairness Intervention Methods for Ranking People
+# Preprocessing Fairness Intervention Package
 ## Requirements
 The use of CIF-Rank requires [R](https://cran.r-project.org/bin/linux/ubuntu/fullREADME.html#installing-r) to be installed.
 
