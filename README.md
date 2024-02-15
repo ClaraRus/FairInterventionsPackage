@@ -12,7 +12,7 @@ pip install .
 ```
 ## Example Use
 
-### CIF-Rank
+### CIF-Rank [3]
 ```
 # init pre-processing fairness intervention
 # <out_path> - output path to save the data and the intermediary steps
@@ -22,7 +22,7 @@ model = CIFRank(query_col='Occupation', IV=['Gender', 'Nationality', 'Occupation
                 MED=['Education', 'Experience', 'Languages'], DV='Score',
                 control='female_non-european_surgeon', out_path=<out_path>)
 ```
-### LFR
+### LFR [5]
 ```
 # init pre-processing fairness intervention
 # <out_path> - output path to save the data and the intermediary steps
@@ -35,7 +35,7 @@ model = LearningFairRepresentations(query_col='Occupation', sensitive_col='Gende
                                     k = 2, Ax=1, Ay=1, Az=1, out_path=<out_path>, model_occ=True)
 ```
 
-### iFair
+### iFair [4]
 ```
 # init pre-processing fairness intervention
 # <out_path> - output path to save the data and the intermediary steps
@@ -62,12 +62,15 @@ Rus, Clara, Maarten de Rijke, and Andrew Yates. "A Study of Pre-processing Fairn
 Methods for Ranking People." (2024).
 
 [2]
+Rus, Clara, Maarten de Rijke, and Andrew Yates. "Counterfactual Representations for Intersectional Fair Ranking in Recruitment." (2023).
+
+[3]
 Ke Yang, Joshua R. Loftus, and Julia Stoyanovich. 2021. Causal intersectionality and fair ranking. In Symposium on Foundations of Responsible
 Computing (FORC). 
 
-[3]
+[4]
 Preethi Lahoti, Krishna P Gummadi, and Gerhard Weikum. 2019. ifair: Learning individually fair data representations for algorithmic decision
 making. In 2019 IEEE 35th International Conference on Data Engineering (ICDE). IEEE, 1334–1345.
 
-[4]
+[5]
 Zemel, Rich, et al. "Learning fair representations." International conference on machine learning. PMLR, 2013.
