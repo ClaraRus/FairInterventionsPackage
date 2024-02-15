@@ -16,7 +16,8 @@ pip install .
 ```
 # init pre-processing fairness intervention
 # <out_path> - output path to save the data and the intermediary steps
-# IV - predictors in the causal model. By integrating the 'Occupation' in addition to the sensitive informatioin (e.g. gender, natinality) the model will account for the varying bias directions encoded in each occupation. 
+# IV - predictors in the causal model. By integrating the 'Occupation' in addition to the sensitive informatioin (e.g. gender, natinality) the model will account for the varying bias directions encoded in each occupation.
+
 model = CIFRank(query_col='Occupation', IV=['Gender', 'Nationality', 'Occupation'],
                 MED=['Education', 'Experience', 'Languages'], DV='Score',
                 control='female_non-european_surgeon', out_path=<out_path>)
