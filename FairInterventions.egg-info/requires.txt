@@ -1,0 +1,5 @@
+llvmlite
+scikit-learn
+numpy
+pandas
+rpy2==3.5.7

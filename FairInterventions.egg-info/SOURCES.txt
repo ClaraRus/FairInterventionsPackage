@@ -1,0 +1,11 @@
+README.md
+setup.py
+FairInterventions/__init__.py
+FairInterventions/fairness_method_CIFRank.py
+FairInterventions/fairness_method_LFR.py
+FairInterventions/fairness_method_iFair.py
+FairInterventions.egg-info/PKG-INFO
+FairInterventions.egg-info/SOURCES.txt
+FairInterventions.egg-info/dependency_links.txt
+FairInterventions.egg-info/requires.txt
+FairInterventions.egg-info/top_level.txt

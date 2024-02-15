@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: FairInterventions
+Version: 0.0.1
+Summary: Fair Interventions Python package.
+Author: Clara Rus
+Author-email: <c.a.rus@uva.nl>
+Keywords: python
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Education
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Requires-Dist: llvmlite
+Requires-Dist: scikit-learn
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: rpy2==3.5.7
+
+Python package encapsulating pre-processing fairness interventions.
