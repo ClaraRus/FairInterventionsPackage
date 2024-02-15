@@ -14,36 +14,39 @@ pip install .
 
 ### CIF-Rank
 ```
+# init pre-processing fairness intervention
+# <out_path> - output path to save the data and the intermediary steps
+# IV - predictors in the causal model. By integrating the 'Occupation' in addition to the sensitive informatioin (e.g. gender, natinality) the model will account for the varying bias directions encoded in each occupation. 
 model = CIFRank(query_col='Occupation', IV=['Gender', 'Nationality', 'Occupation'],
                 MED=['Education', 'Experience', 'Languages'], DV='Score',
-                control='female_non-european_surgeon', out_path=out_path, pos_th=0, run=0)
-
-# generate fair data for the candidates
-df_train_count, df_test_count = model.generate_fair_data(df_train, df_test)
-
-# rank the candidates by the debiased score
-df_train_reranked = df_train_count.groupby('Occupation').apply(lambda x: x.sort_values(by='Score_fair', ascending=False)).reset_index(drop=True)
-df_test_reranked = df_test_count.groupby('Occupation').apply(lambda x: x.sort_values(by='Score_fair', ascending=False)).reset_index(drop=True)
+                control='female_non-european_surgeon', out_path=<out_path>)
 ```
 ### LFR
 ```
 # init pre-processing fairness intervention
-model = LearningFairRepresentations(query_col='Occupation', sensitive_col='Gender', score_col='Score', features_col=['Education', 'Experience', 'Languages'],
-                                    k = 2, Ax=1, Ay=1, Az=1, out_path=out_path, pos_th=0, run=0, model_occ=True)
-# generate fair data for the candidates
-df_train_count, df_test_count = model.generate_fair_data(df_train, df_test)
+# <out_path> - output path to save the data and the intermediary steps
+# k - number of protoypes
+# Ax - hyperparameter for Lx, the data loss that should optimize for keeping the new representations as close as possible to the original ones
+# Ay - hyperparameter for Ly, the utility loss that should ensure that representations are still useful
+# Az - hyperparameter for Lz, the group fairness loss
 
-# rank the candidates by the debiased score
-df_train_reranked = df_train_count.groupby('Occupation').apply(lambda x: x.sort_values(by='Score_fair', ascending=False)).reset_index(drop=True)
-df_test_reranked = df_test_count.groupby('Occupation').apply(lambda x: x.sort_values(by='Score_fair', ascending=False)).reset_index(drop=True)
+model = LearningFairRepresentations(query_col='Occupation', sensitive_col='Gender', score_col='Score', features_col=['Education', 'Experience', 'Languages'],
+                                    k = 2, Ax=1, Ay=1, Az=1, out_path=<out_path>, model_occ=True)
 ```
 
 ### iFair
 ```
 # init pre-processing fairness intervention
-model = iFairRanking(query_col='Occupation', sensitive_col='Gender', score_col='Score', features_col=['Education', 'Experience', 'Languages'],
-                                    k = 2, Ax=1, Az=1, out_path=out_path, pos_th=0, run=0, max_iter=100, nb_restarts=3, batch_size=1000, model_occ=True)
+# <out_path> - output path to save the data and the intermediary steps
+# Ax - hyperparameter for Lx, the data loss that should optimize for keeping the new representations as close as possible to the original ones
+# Az - hyperparameter for Lz, the group fairness loss
 
+model = iFairRanking(query_col='Occupation', sensitive_col='Gender', score_col='Score', features_col=['Education', 'Experience', 'Languages'],
+                                    k = 2, Ax=1, Az=1, out_path=<out_path>, model_occ=True)
+
+```
+### Generate fair data
+```
 # generate fair data for the candidates
 df_train_count, df_test_count = model.generate_fair_data(df_train, df_test)
 
